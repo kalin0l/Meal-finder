@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
-import Ingredients from '../components/Ingredients';
-import Measures from '../components/Measures';
+import Ingredients from '../components/Ingredients'
+import Measures from '../components/Measures'
 import './SingleMeal.css'
 
 
@@ -75,19 +75,8 @@ const SingleMeal = () => {
                         <h4>Type of food: {type}</h4>
                     </div>
                     <div className='compositions'>
-                        <div className='ingredients'>
-                            <h3>Ingredients</h3>
-                            {ingredients.map((item, i) => {
-                                return <span key={i}>{item}</span>
-                            })}
-
-                        </div>
-                        <div className='measures'>
-                            <h3>Measures</h3>
-                            {measures.map(item => {
-                                return <span key={index}>{item}</span>
-                            })}
-                        </div>
+                            <Ingredients {...ingredients}/>
+                            <Measures {...measures}/>
                     </div>
 
                 </div>
