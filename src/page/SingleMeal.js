@@ -45,6 +45,7 @@ const SingleMeal = () => {
 
     console.log(meal)
     const { index, name, type, nationality, img, description, ingredients, measures } = meal;
+    console.log(ingredients);
 
 
     if (!meal) {
@@ -74,8 +75,19 @@ const SingleMeal = () => {
                         <h4>Type of food: {type}</h4>
                     </div>
                     <div className='compositions'>
-                        <Ingredients {...ingredients} />
-                        <Measures {...measures} />
+                        <div className='ingredients'>
+                            <h3>Ingredients</h3>
+                            {ingredients.map((item, i) => {
+                                return <span key={i}>{item}</span>
+                            })}
+
+                        </div>
+                        <div className='measures'>
+                            <h3>Measures</h3>
+                            {measures.map(item => {
+                                return <span key={index}>{item}</span>
+                            })}
+                        </div>
                     </div>
 
                 </div>
