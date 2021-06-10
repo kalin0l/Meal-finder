@@ -40,7 +40,6 @@ const SingleMeal = () => {
     }
     useEffect(() => {
         getMeal();
-        console.log(getMeal());
     }, [id])
 
     console.log(meal)
@@ -75,8 +74,8 @@ const SingleMeal = () => {
                         <h4>Type of food: {type}</h4>
                     </div>
                     <div className='compositions'>
-                            <Ingredients {...ingredients}/>
-                            <Measures {...measures}/>
+                            <Ingredients {...[ingredients]}/>
+                            <Measures {...[measures]}/>
                     </div>
 
                 </div>
